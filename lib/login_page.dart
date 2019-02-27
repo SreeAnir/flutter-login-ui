@@ -14,11 +14,17 @@ class _LoginPageState extends State<LoginPage> {
       tag: 'hero',
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
-        radius: 48.0,
+        radius: 12.0,
         child: Image.asset('assets/logo.png'),
       ),
     );
-
+  final assist = FlatButton(
+      child: Text(
+        'Login or Forgot Password',
+        style: TextStyle(color: Colors.indigo ),
+      ),
+      onPressed: () {},
+    );
     final email = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
@@ -59,12 +65,13 @@ class _LoginPageState extends State<LoginPage> {
     final forgotLabel = FlatButton(
       child: Text(
         'Forgot password?',
-        style: TextStyle(color: Colors.black54),
+        style: TextStyle(color: Colors.indigo ),
       ),
       onPressed: () {},
     );
-
-    return Scaffold(
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      home:  Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: ListView(
@@ -72,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
             logo,
+            assist,
             SizedBox(height: 48.0),
             email,
             SizedBox(height: 8.0),
@@ -82,6 +90,27 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
+    )
     );
+    // return Scaffold(
+    //   backgroundColor: Colors.white,
+    //   body: Center(
+    //     child: ListView(
+    //       shrinkWrap: true,
+    //       padding: EdgeInsets.only(left: 24.0, right: 24.0),
+    //       children: <Widget>[
+    //         logo,
+    //         assist,
+    //         SizedBox(height: 48.0),
+    //         email,
+    //         SizedBox(height: 8.0),
+    //         password,
+    //         SizedBox(height: 24.0),
+    //         loginButton,
+    //         forgotLabel
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }
